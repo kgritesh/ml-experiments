@@ -1,0 +1,34 @@
+[project]
+name = "ml-experiments"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Ritesh Kadmawala", email = "ritesh@vertexcover.io" }
+]
+dependencies = [
+    "torch==2.1.2",
+    "torchvision==0.16.2+cpu",
+    "torchaudio==2.1.2+cpu",
+    "requests>=2.31.0",
+    "notebook>=7.0.6",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[[tool.rye.sources]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
+
+[tool.hatch.build.targets.wheel]
+packages = ["torch"]
